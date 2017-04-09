@@ -3,7 +3,9 @@
 Primary style
 
 -------------------------------- */
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box; }
 
 html {
@@ -13,16 +15,22 @@ body {
   font-size: 1.6rem;
   font-family: sans-serif;
   color: #333333;
-  background-color: #F4BEA5; }
+  animation: colorchange 20s ease infinite;
+  -webkit-animation: colorchange 20s ease infinite; }
 
 a {
-  color: #62c169;
+  color: #ffffff;
   text-decoration: none; }
 
-img, embed, object, video, svg {
+img,
+embed,
+object,
+video,
+svg {
   max-width: 100%; }
 
-input, textarea {
+input,
+textarea {
   font-family: inherit;
   font-size: 1.6rem; }
 
@@ -31,12 +39,16 @@ input, textarea {
 Patterns - reusable parts of our design
 
 -------------------------------- */
-.cd-container {
+.container {
   /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
   width: 90%;
   max-width: 1170px;
-  margin: 0 auto; }
-  .cd-container::after {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px; }
+  .container::after {
     clear: both;
     content: "";
     display: block; }
@@ -46,3 +58,17 @@ Patterns - reusable parts of our design
 Main Components 
 
 -------------------------------- */
+.logo {
+  width: 200px; }
+
+@keyframes colorchange {
+  0% {
+    background: #F4BEA5; }
+  100% {
+    background: #82958C; } }
+@-webkit-keyframes colorchange
+/* Safari and Chrome - necessary duplicate */ {
+  0% {
+    background: #F4BEA5; }
+  100% {
+    background: #82958C; } }

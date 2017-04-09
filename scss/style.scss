@@ -1,9 +1,6 @@
 // Note: we use Autoprefixer to add vendor prefixes to our CSS -> https://github.com/postcss/autoprefixer
-
 @import '../partials/variables'; // colors, fonts etc...
-
 @import '../partials/mixins'; // custom mixins
-
 @import '../partials/layout'; // responsive grid and media queries
 
 /* -------------------------------- 
@@ -12,36 +9,45 @@ Primary style
 
 -------------------------------- */
 
-*, *::after, *::before {
-	box-sizing: border-box;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
 }
 
 html {
-	font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-	font: {
-		size: 1.6rem;
-		family: $primary-font; // variables inside partials > _variables.scss
-	}
-	color: $color-1;
-	background-color: $color-3;
+    font: {
+        size: 1.6rem;
+        family: $primary-font; // variables inside partials > _variables.scss
+    }
+    color: $color-1;
+    animation: colorchange 20s ease infinite;
+    -webkit-animation: colorchange 20s ease infinite;
 }
 
 a {
-	color: $color-2;
-	text-decoration: none;
+    color: $color-2;
+    text-decoration: none;
 }
 
-img, embed, object, video, svg {
-	max-width: 100%;
+img,
+embed,
+object,
+video,
+svg {
+    max-width: 100%;
 }
 
-input, textarea {
-	font-family: inherit;
-	font-size: 1.6rem;
+input,
+textarea {
+    font-family: inherit;
+    font-size: 1.6rem;
 }
+
 
 /* -------------------------------- 
 
@@ -49,15 +55,46 @@ Patterns - reusable parts of our design
 
 -------------------------------- */
 
-.cd-container { /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-	width: 90%;
-	max-width: $L; // breakpoints inside partials > _layout.scss
-	margin: 0 auto;
-	@include clearfix;
+.container {
+    /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+    width: 90%;
+    max-width: $L; // breakpoints inside partials > _layout.scss
+    margin: 0 auto;
+    @include clearfix;
+    display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	height: 400px;
 }
+
 
 /* -------------------------------- 
 
 Main Components 
 
 -------------------------------- */
+
+.logo {
+	width: 200px;
+}
+
+@keyframes colorchange {
+    0% {
+        background: $color-4;
+    }
+    100% {
+        background: $color-5;
+    }
+}
+
+@-webkit-keyframes colorchange
+/* Safari and Chrome - necessary duplicate */
+
+{
+    0% {
+        background: $color-4;
+    }
+    100% {
+        background: $color-5;
+    }
+}
