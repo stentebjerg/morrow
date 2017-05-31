@@ -55,20 +55,12 @@ Logo
     position: fixed;
     z-index: 2;
     right: 5%;
-    bottom: 1%;
+    bottom: 5%;
     opacity: 0.3
 }
 
-@include MQ(M) {
-    .logo {
-        bottom: 5%;
-    }
-}
-
-@include MQ(L) {
-    .logo {
-       bottom: 5%; 
-    }
+.navigation-is-open .logo {
+    display: none;
 }
 
 /* -------------------------------- 
