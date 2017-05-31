@@ -5,24 +5,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
-    <!-- CSS reset -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Resource style -->
+    <script src="js/modernizr.js"></script>
+    <!-- Modernizr -->
     <title>Morrow</title>
 </head>
 
 <body>
     <main>
         <div class="container">
-            <img class="logo" src="img/morrow-logo.png">
+            <span class="element"></span>
         </div>
     </main>
+    <a href="#cd-nav" class="cd-nav-trigger">Menu 
+        <span class="cd-nav-icon"></span>
+
+        <svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
+            <circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157" stroke-dashoffset="157"></circle>
+        </svg>
+    </a>
+    <img class="logo" src="../img/morrow-logo.svg" alt="Morrow logo">
+    <div id="cd-nav" class="cd-nav">
+        <div class="cd-navigation-wrapper">
+            <div class="cd-half-block">
+                <h2 class="logo-nav"><img src="../img/morrow-logo.svg" alt="Morrow logo"></h2>
+                <p>Morrow was founded to inspire, impact and improve people’s everyday lives.</p>
+                <p>We cater to The Urban Generation. A passionate, curious, and designorientedglobal audience.</p>
+                <p>With dedicated ambitions, rooted in a collective passion for timeless and iconic design, we explore, evolve and curate the best in design.</p>
+                <p>We challenge perfection and the boundaries of industrial manufacturing, premium materials, technology, science and art.</p>
+                <p>We honour the legacy of the brightest creators of the past, and welcome the summit of talents of tomorrow</p>
+                <p>We are pleased to welcome you.</p>
+                
+                <img class="signature" src="../img/signature.svg" alt="">
+            </div>
+            <!-- .cd-half-block -->
+            <div class="cd-half-block">
+                <address>
+                    <ul class="cd-contact-info">
+                        <!--
+                        <li>
+                            <span class="bold">UNITED KINGDOM</span>
+                            <span>MORROW STUDIO LTD</span>
+                            <span>Regina House, 124 Finchley Road</span>
+                            <span>London, NW3 5JS</span>
+                        </li>
+                        <li>
+                            <span class="bold">CHINA</span>
+                            <span>MORROW GROUP CHINA LTD</span>
+                            <span>Building 1933 Unit: 1-315/316</span>
+                            <span>10 Shajing Rd</span>
+                            <span>Shanghai, 200080</span>
+                        </li>
+                        <li>
+                            <span class="bold">DENMARK</span>
+                            <span>Balticagade 12, 1 sal</span>
+                            <span>Aarhus, 8000</span>
+                        </li>
+                        -->
+                        <li>
+                            <span class="bold">ERIC WANG</span>
+                            <span>Co Founder / COO</span><br>
+                            <span>+44 7834632550</span>
+                            <span>+86 13910321365</span>
+                            <span>WeChat: 13910321365</span>
+                            <span><a href="mailto:ew@morrow.co.uk">ew@morrow.co.uk</a></span>
+                        </li>
+                        <li>
+                            <span class="bold">MORTEN BRO BJERREGAARD</span>
+                            <span>Co Founder / CEO</span><br>
+                            <span>+45 53874777</span>
+                            <span>+86 13641961420</span>
+                            <span>WeChat: Morten1906</span>
+                            <span><a href="mailto:mb@morrow.co.uk">mb@morrow.co.uk</a></span>
+                        </li>
+                    </ul>
+                </address>
+            </div>
+            <!-- .cd-half-block -->
+        </div>
+        <!-- .cd-navigation-wrapper -->
+    </div>
+    <!-- .cd-nav -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script>
     if (!window.jQuery) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
     </script>
-    <script src="js/main.js"></script>
-    <!-- Resource jQuery -->
+    <script src="js/typed.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Typed.new('.element', {
+            strings: ["We explore, evolve and curate.", "Good design is good business.", "Good design is long lasting."],
+            typeSpeed: 10,
+            loop: true,
+            startDelay: 200,
+            typeSpeed: 10,
+            backDelay: 5000,
+            backSpeed: 5
+        });
+    });
+    jQuery(document).ready(function($) {
+        var isLateralNavAnimating = false;
+
+        //open/close lateral navigation
+        $('.cd-nav-trigger').on('click', function(event) {
+            event.preventDefault();
+            //stop if nav animation is running 
+            if (!isLateralNavAnimating) {
+                if ($(this).parents('.csstransitions').length > 0) isLateralNavAnimating = true;
+
+                $('body').toggleClass('navigation-is-open');
+                $('.cd-navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
+                    //animation is over
+                    isLateralNavAnimating = false;
+                });
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>

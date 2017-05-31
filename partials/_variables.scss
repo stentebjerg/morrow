@@ -1,6 +1,6 @@
 // colors
 
-$color-1: #333333; // main text
+$color-1: #2d2d2d; // main text
 $color-2: #ffffff; // white color
 $color-3: #F1F1F0; // Gray color
 $color-4: #F4BEA5; // salmon color
@@ -8,4 +8,27 @@ $color-5: #82958C; // olive color
 
 // fonts 
 
-$primary-font: sans-serif;
+@font-face {
+    font-family: 'gotham-bold';
+    src: url('../fonts/gotham-bold-webfont.woff2') format('woff2'),
+         url('../fonts/gotham-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'gotham-book-regular';
+    src: url('../fonts/gotham-book-webfont.woff2') format('woff2'),
+         url('../fonts/gotham-book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+$primary-font: 'gotham-bold',sans-serif;
+$secondary-font: 'gotham-book-regular',sans-serif;
+
+// animation
+
+$animation-duration: 0.7s;
