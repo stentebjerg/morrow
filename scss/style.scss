@@ -80,7 +80,7 @@ main {
     overflow-y: auto;
     background-color: $color-4;
     -webkit-overflow-scrolling: touch;
-    padding: 200px 5%;
+    padding: 10%;
     
     /* Force Hardware Acceleration in WebKit */
     @include transform(translateZ(0));
@@ -112,7 +112,7 @@ main {
     }
 
     @include MQ(M) {
-        padding: 250px 10%;
+        padding: 10%;
 
         h1 {
             font-size: 3.6rem;
@@ -333,7 +333,7 @@ main {
     }
 
     .cd-contact-info {
-        margin-top: 80px;
+        margin-top: 30px;
 
         li {
             font-family: $secondary-font;
@@ -402,7 +402,6 @@ main {
         }
 
         .cd-contact-info {
-            margin-top: 120px;
             text-align: right;
 
             li {
@@ -410,7 +409,7 @@ main {
             }
 
             li, a, span {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
         }
     }
