@@ -26,8 +26,17 @@ $color-5: #82958C; // olive color
 
 }
 
+@font-face {
+    font-family: 'franklingothic-book';
+    src: url('../fonts/franklingothic-book-webfont.woff2') format('woff2'),
+         url('../fonts/franklingothic-book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 $primary-font: 'gotham-bold',sans-serif;
-$secondary-font: 'gotham-book-regular',sans-serif;
+$secondary-font: 'franklingothic-book',sans-serif;
 
 // animation
 
