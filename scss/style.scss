@@ -80,7 +80,7 @@ main {
     overflow-y: auto;
     background-color: $color-4;
     -webkit-overflow-scrolling: touch;
-    padding: 10%;
+    padding: 200px 5%;
     
     /* Force Hardware Acceleration in WebKit */
     @include transform(translateZ(0));
